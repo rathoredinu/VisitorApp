@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  age: 1
+  address: MyString
+  contact: MyString
+  gender: MyString
+  contactperson: MyString
+  intime: 2012-05-06 12:14:17
+  outtime: 2012-05-06 12:14:17
+  date: 2012-05-06
+
+two:
+  name: MyString
+  age: 1
+  address: MyString
+  contact: MyString
+  gender: MyString
+  contactperson: MyString
+  intime: 2012-05-06 12:14:17
+  outtime: 2012-05-06 12:14:17
+  date: 2012-05-06

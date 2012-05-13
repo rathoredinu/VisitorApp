@@ -1,0 +1,70 @@
+<div style="width:35%;float:left; margin-left:20px">
+		<table>
+		<tr><td>
+				<table style="width:100%">
+				<tr><td>
+									<table style="width:100%" >
+										<tr><td><center><h2><b>Synechron Visitor's Pass</b></h2></center>
+												<table>
+														<td><label><b>Name</b></label></td>
+														<td><label><%= @visitor.name %></label></td>
+													</tr>	
+													<tr>
+														<td><label><b>Date</b></label></td>				
+														<td><label><%= @visitor.date %></label></td>
+													</tr>
+													<tr>
+														<td><label><b>Address</b></label></td>
+														<td><label><%= @visitor.address %></label></td>
+													</tr>	
+														<td><label><b>Contact</b></label></td>
+														<td><label><%= @visitor.contact %></label></td>
+													</tr>
+													<tr>
+														<td><label><b>Whom<br/>To Meet</b></label></td>
+														<td><label><%= @visitor.contactperson %></label><label></td>
+													</tr>
+													<tr>
+														<td><label><b>In-Time</b></label></td>
+														<td><label><%= @visitor.intime %></label></td>
+													</tr>
+												</table>
+										</td>
+											<td>
+												<table>
+													<tr>
+													<td>
+															<% if@visitor.image? %>
+																<%=image_tag @visitor.image.url,:width => 150, :height => 150 %>
+															<%end%>
+													</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+										</table>
+							</td></tr>
+					<tr>
+							
+									<table style="width:100%">
+										<tr><td>
+											<%= image_tag("/images/vheader.bmp",:width => 460, :height => 40 )%>
+										</td></tr>
+									</table>
+							
+					</tr>
+					<tr>
+							<td>
+								<table border="2" style="width:100%">
+										<tr>
+												<%= image_tag("/images/vdata.bmp",:width => 460)%>
+										</tr>
+								</table>
+							</td>
+					</tr>
+					</table>
+			</td></tr>
+			</table>
+					<input type="button" value="Print" name="print" id="print" onclick="window.print()"/>
+					<input type="button" value="Done" name="done" id="done" onclick="window.close(this)"/>
+</div>				

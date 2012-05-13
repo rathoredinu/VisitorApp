@@ -1,0 +1,91 @@
+<%= form_for(@visitor, :html => { :multipart => true} ) do |f| %>
+  <% if @visitor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@visitor.errors.count, "error") %> prohibited this visitor from being saved:</h2>
+
+      <ul>
+      <% @visitor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+	
+  <% end %>
+  <br/><br/>
+  <div>
+					<div class="row">
+									<div class="span1"></div>
+									<div class="span1">
+										<label><h4>Name</h4></label>
+									</div>
+									<div class="span1">
+										<%= f.text_field :name %>
+									</div>
+									<div class="span1"></div><div class="span1"></div>
+									<div class="span1">
+										<label><h4>Age</h4></label>
+									</div>
+									<div class="span1">
+										<%= f.number_field :age %>
+									</div>
+					</div>
+					<br/>
+					<div class="row">
+									<div class="span1"></div>
+									<div class="span1">
+										<label><h4>Gender</h4></label>
+									</div>
+									<div class="span1">
+										<%= f.text_field :gender %>
+									</div>
+									<div class="span1"></div><div class="span1"></div>
+									<div class="span1">
+										<label><h4>Address</h4></label>
+									</div>
+									<div class="span1">
+										 <%= f.text_field :address %>
+									</div>
+					</div><br/>
+					<div class="row">
+									<div class="span1"></div>
+									<div class="span1">
+										<label><h4>Contact</h4></label>
+									</div>
+									<div class="span1">
+										<%= f.text_field :contact %>
+									</div>
+									<div class="span1"></div><div class="span1"></div>
+									<div class="span1">
+										<label><h4>Whom To Meet</h4></label>
+									</div>
+									<div class="span1">
+										  <%= f.text_field :contactperson %>
+									</div>
+									
+									
+					</div></br>
+					<div class="row"><div class="span1"></div>
+									<div class="span1">
+										<label><h4>Upload Photo</h4></label>
+									</div>
+									<div class="span1">
+										 <%= f.file_field :image %>
+									</div>
+					</div>
+					</br>
+					<divclass="row">	
+						 <%= f.hidden_field :intime, :value=> Time.now.strftime("%H:%M:%S")%> 
+						<%= f.hidden_field :date, :value=> Time.now.strftime("%m/%d/%Y")%> 
+					</div>
+					
+					</br>
+					
+					<div class="row"><div class="span1"></div>
+									<div class="span1"></div>	
+									<div class="actions">
+										<%= f.submit 'Add Visitor'%>
+									</div>
+					</div>
+					
+				</div>
+<% end %>

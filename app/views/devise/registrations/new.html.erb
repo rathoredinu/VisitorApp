@@ -1,0 +1,36 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+<table>
+<tr>
+	<td>
+	<table style="margin-left:220px; width:100%">
+	<tr><td><br/><br/><br/><br/>
+	<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to </h1>
+		<%= image_tag("/images/Synechron.jpg")%><br/>
+		<h1>Visitor Management System</h1></td></tr></table>
+	</td>
+	<td>
+	<br/>
+
+	<table style="margin-left:250px;valign:left">
+	  <tr><br/><br/><h2>Sign Up</h2></tr><br/>
+	  <tr>
+		<td><label>Email</label></td><td></td>
+		<td><%= f.email_field :email %></td>
+	  </tr>
+	  <tr>
+		<td><%= f.label :password %></td><td></td>
+		<td><%= f.password_field :password %></td>
+	  </tr>
+	  <tr>
+		<td><%= f.label :password_confirmation %></td><td></td>
+		<td><%= f.password_field :password_confirmation%></td>
+	  </tr>
+	  <tr>
+		<td><%= f.submit "Sign up" %></td>
+	  </tr>
+	  
+	</table>
+ <% end %>
+

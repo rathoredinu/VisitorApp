@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Synechron Visitor System</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div id="main-header" style="background-color:#FFDD00;">
+          <%= image_tag("/images/header.jpg")%>
+      </header>
+      <div id="menu" style="background-color:black;">
+        <ul>
+          <li><%= link_to 'Home', home_path %></li>
+          <li><%= link_to 'Active Visitors', visitors_path %></li>
+          <li><%= link_to 'New Visitor', new_visitor_path %></li>
+          <li><%= link_to 'About Us', about_path %></li>
+          
+			<%- if user_signed_in? -%>
+				  <li><%= link_to 'Logout', destroy_user_session_path, { method: :delete } %></li>
+				  <%- else -%>
+				  <li><%= link_to 'Sign in', new_user_session_path %></li>
+            <%- end -%>
+        </ul>
+      </div>
+      <%= yield %>
+    </div>
+    <div class="footer">
+      <footer style="position:fixed; bottom:0px"><%= image_tag("/images/footer.jpg")%></footer>
+    </div>
+
+  </body>
+</html>

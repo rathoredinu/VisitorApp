@@ -1,0 +1,12 @@
+<tr>
+		<td><%= visitor.name %></td>
+		<td><%= visitor.age %></td>
+		<td><%= visitor.gender %></td>
+		<td><%= visitor.address %></td>
+		<td><%= visitor.contact %></td>
+		<td><%= visitor.contactperson %></td>
+		<td><%= visitor.date %></td>						
+		<td><%= visitor.intime.strftime("%I:%M:%S %p") %></td>
+		<td><%= visitor.outtime %></td>
+		<td><%= link_to 'Show Details','#',:onclick => "window.open('http://localhost:3000/visitors/vcard/#{visitor.id}', 'name', 'resizable=0, scrollbars=1,height=620,width=550')" %>|<%= link_to 'Set Out-Time', edit_visitor_path(visitor) %>|<%= link_to 'Delete Visitor', visitor, confirm: 'Are you sure for deleting this Visitor?', method: :delete %></td>
+</tr>
